@@ -1,11 +1,12 @@
-import exif
+import exif 
+from exif import Image
 
 def date_from_exif(file_name):
     try:
         with open(file_name, 'rb') as f:
             image = exif.Image(f)
             if 'EXIF' in image.tags:
-                exif_data = image.tags['EXIF']
+                exif_data = image.has_exif
                 if 'DateTime' in exif_data:
                     date_time = exif_data['DateTime']
                     if date_time is not None:
