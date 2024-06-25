@@ -1,14 +1,14 @@
 import os
 import datetime
 
-current_dir = os.path.dirname(os.path.abspath(__file__))
+current_file_path = os.path.abspath(__file__)
 
-filename = input("Введите имя файла: ")
+directory = os.path.dirname(current_file_path)
 
-file_path = os.path.join(current_dir, filename)
+file_path = os.path.join(directory)
 
 modification_date = os.path.getmtime(file_path)
 
 modification_datetime = datetime.datetime.fromtimestamp(modification_date)
 
-print(f"Дата последнего изменения файла {filename}: {modification_datetime}")
+print(f"Дата последнего изменения файла {file_path}: {modification_datetime}")
