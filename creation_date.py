@@ -1,10 +1,15 @@
 import os
-from datetime import datetime
+import datetime
 
-current_file = os.path.realpath(__file__)
+current_file_path = os.path.abspath(__file__)
 
-creation_date = os.path.getctime(current_file)
+directory = os.path.dirname(current_file_path)
 
-creation_date_str = datetime.fromtimestamp(creation_date).strftime('%Y-%m-%d %H:%M:%S')
+file_path = os.path.join(directory)
 
-print(f'Дата создания файла: {creation_date_str}')
+creation_date = os.path.getctime(file_path)
+
+creation_datetime = datetime.datetime.fromtimestamp(creation_date)
+
+print(f"Дата последнего изменения файла {file_path}: {creation_datetime}")
+
