@@ -1,9 +1,7 @@
 import os
 import datetime
 
-current_dir = os.path.dirname(os.path.abspath(__file__))
-
-file_path = os.path.join(current_dir)
+file_path  = 'DJI_0158.JPG'
 
 creation_date = os.path.getctime(file_path)
 
