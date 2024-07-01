@@ -7,4 +7,4 @@ creation_date = os.path.getctime(file_path)
 
 creation_datetime = datetime.datetime.fromtimestamp(creation_date)
 
-print(f"Дата последнего изменения файла : {creation_datetime}")
+print(f"Создание  файла : {creation_datetime}")
